@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { navigationLinks } from "@/constants/nav_links";
-import Logo from "./logo";
 
 type Props = {};
 
@@ -15,7 +14,7 @@ export default function Navlinks({}: Props) {
   const { user } = useUser();
 
   return (
-    <nav className="hidden md:flex gap-6 md:flex-row md:items-center md:gap-5 lg:gap-6 bg-red-500">
+    <nav className="hidden md:flex w-full gap-6 md:flex-row md:items-center md:justify-center md:gap-5 lg:gap-6">
       {navigationLinks.map((link) => {
         const isActive = pathname === link.href;
         const href = user || link.href === "/" ? link.href : "sign-in";

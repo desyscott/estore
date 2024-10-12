@@ -23,7 +23,7 @@ export default function UserBtn({}: Props) {
     <>
       {!user ? (
         <Link href="/sign-in">
-          <CircleUserRound />
+          <CircleUserRound className="h-7 w-7" />
         </Link>
       ) : (
         // <UserButton afterSignOutUrl="/sign-in" />
