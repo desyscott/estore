@@ -10,7 +10,7 @@ type Props = {};
 
 export default function Nav_Bar({}: Props) {
   return (
-    <header className="sticky top-0 z-10 flex py-4 items-center justify-between  gap-4 border-b bg-background px-4 md:px-6">
+    <header className="sticky top-0 z-10 flex py-4 items-center justify-between gap-4 border-b px-4 md:px-6 bg-white/50 backdrop-filter backdrop-blur-lg">
       <div className="hidden md:block">
         <Logo />
       </div>

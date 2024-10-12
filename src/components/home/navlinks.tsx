@@ -23,7 +23,7 @@ export default function Navlinks({}: Props) {
             key={link.href}
             href={href}
             className={cn(
-              "text-sm font-meium text-muted-foreground transition-colors hover:text-red-500",
+              "text-xs font-meium text-muted-foreground transition-colors hover:text-red-500 uppercase",
               isActive && " text-red-500"
             )}
           >
