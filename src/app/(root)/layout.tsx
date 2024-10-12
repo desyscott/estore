@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 
 import "../../styles/globals.css";
-import Navbar from "@/components/Navbar";
-import ToasterProvider from "@/lib/providers/ToasterProvider";
+// import Navbar from "@/components/Navbar";
 import Nav_Bar from "@/components/Nav_bar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,21 +12,16 @@ export const metadata: Metadata = {
   description: "Esstore Ecommerce Store",
 };
 
-export default function RootLayout({
+export default function AppLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ClerkProvider>
-          <ToasterProvider />
-          <Navbar />
-          <Nav_Bar />
-          {children}
-        </ClerkProvider>
-      </body>
-    </html>
+    <main className={inter.className}>
+      {/* <Navbar /> */}
+      <Nav_Bar />
+      {children}
+    </main>
   );
 }

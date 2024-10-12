@@ -15,11 +15,7 @@ export default function Navlinks({}: Props) {
   const { user } = useUser();
 
   return (
-    <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-      <>
-        <Logo />
-      </>
-
+    <nav className="hidden md:flex gap-6 md:flex-row md:items-center md:gap-5 lg:gap-6 bg-red-500">
       {navigationLinks.map((link) => {
         const isActive = pathname === link.href;
         const href = user || link.href === "/" ? link.href : "sign-in";
@@ -28,8 +24,8 @@ export default function Navlinks({}: Props) {
             key={link.href}
             href={href}
             className={cn(
-              "text-muted-foreground transition-colors hover:text-foreground hover:text-red-500",
-              isActive && "font-medium text-red-500"
+              "text-sm font-meium text-muted-foreground transition-colors hover:text-red-500",
+              isActive && " text-red-500"
             )}
           >
             {link.title}

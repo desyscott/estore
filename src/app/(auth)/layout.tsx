@@ -1,26 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../../styles/globals.css";
 
-import { ClerkProvider } from "@clerk/nextjs";
+import "../../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Esstore - Store Auth",
-  description: "Next.js 14 Esstore Ecommerce store",
+  title: "Auth | Esstore",
+  description: "Esstore Ecommerce",
 };
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning={true}>
-        <body className={inter.className}>{children}</body>
-      </html>
-    </ClerkProvider>
-  );
+  return <main className={inter.className}>{children}</main>;
 }
