@@ -19,11 +19,13 @@ export default function AppLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className={inter.className}>
+    <main className={`${inter.className} flex flex-col h-screen`}>
       {/* <Navbar /> */}
       <Nav_Bar />
       {children}
-      <Footer />
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </main>
   );
 }

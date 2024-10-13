@@ -12,11 +12,12 @@ export default function ImageSection({}: Props) {
         <SecOne />
       </div>
 
-      <div className="mt-8 md:mt-0 bg-amber-00 lg:order-1  lg:w-[30%]">
+      <div className="mt-8 lg:mt-0 bg-amber-00 lg:order-1  lg:w-[30%]">
         <SecTwo />
       </div>
 
-      <div className="hidden md:block mt-8 md:mt-0 bg-cyan-00 lg:order-3  lg:w-[25%] ml-auto">
+      <div className="mt-14 lg:mt-0 lg:order-3  w-full md:w-1/2 lg:w-[25%] ml-0 lg:ml-auto">
+        {/* <div className="hidden md:block mt-8 md:mt-0 bg-cyan-00 lg:order-3  lg:w-[25%] ml-auto"> */}
         <SecThree />
       </div>
     </div>

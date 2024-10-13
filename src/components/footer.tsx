@@ -12,31 +12,31 @@ type Props = {};
 export default function Footer({}: Props) {
   return (
     <div className="bg-black p-8">
-      <div className="flex text-white/70 gap-2 pt-8">
+      <div className="flex flex-wrap md:flex-nowrap text-white/70 gap-12 md:gap-2 pt-8 bg-red-00">
         <div className="bg-orange-00 w-[50%] flex flex-col gap-2">
-          <p className="text-2xl font-semibold w-[50%]">
-            We will growup your business with a personal ai assistant
+          <p className="text-lg md:text-xl font-semibold w-full md:w-[70%] lg:w-[50%]">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
           <p className="text-sm mt-2">Micheal Essuman</p>
           <p className="text-sm -mt-1">October, 2024</p>
         </div>
-        <div className="bg-amber-00 w-[15%] ml-auto">
-          <p className="text-xl font-semibold mb-4">Company</p>
+        <div className="bg-amber-00 w-[40%] md:w-[15%] ml-0 md:ml-auto ">
+          <p className="text-lg font-medium mb-4">Company</p>
           <p className="text-base mb-1">Blog</p>
           <p className="text-base mb-1">Careers</p>
           <p className="text-base mb-1">Pricing</p>
+          <p className="text-base mb-1">Advertise</p>
         </div>
-        <div className="bg-green-00 w-[15%] ml-auto">
-          <p className="text-xl font-semibold mb-4">Resources</p>
+        <div className="bg-green-00 w-[40%] md:w-[15%]  ml-0 md:ml-auto ">
+          <p className="text-lg font-medium mb-4">Resources</p>
           <p className="text-base mb-1">Documentation</p>
           <p className="text-base mb-1">Papers</p>
           <p className="text-base mb-1">Press kit </p>
           <p className="text-base mb-1">Contact</p>
           <p className="text-base mb-1">Support</p>
-          <p className="text-base mb-1">Advertise</p>
         </div>
-        <div className="bg-red-00 w-[15%] ml-auto">
-          <p className="text-xl font-semibold  mb-4">Legal</p>
+        <div className="bg-red-00 w-[40%] md:w-[15%]  ml-0 md:ml-auto ">
+          <p className="text-lg font-medium  mb-4">Legal</p>
           <p className="text-base mb-1">Privacy</p>
           <p className="text-base mb-1">Terms</p>
           <p className="text-base mb-1">Code of conduct</p>
@@ -47,7 +47,7 @@ export default function Footer({}: Props) {
 
       <div className="h-[0.5px] w-full bg-white/50 my-8"></div>
 
-      <div className="flex justify-between items-center pt-8 pb-4 text-white/80 p-8">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0  pt-8 pb-4 text-white/80 p-8">
         <div className="flex items-center gap-2">
           <Link href="mailto:michealessuman08@gmail.com" target="_blank">
             <EnvelopeClosedIcon className="w-5 h-5" />
