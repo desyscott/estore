@@ -1,6 +1,7 @@
 import React from "react";
 import ProductsHeader from "./products_header";
 import ProductsList from "./product_lists";
+import ProductCard from "./product_card";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ export default function ProductsSection({}: Props) {
       <ProductsHeader />
 
       <div className="my-10">
+        {/* <ProductCard /> */}
         <ProductsList />
       </div>
     </div>

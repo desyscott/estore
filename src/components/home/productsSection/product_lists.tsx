@@ -1,6 +1,7 @@
-import ProductCard from "@/components/ProductCard";
+// import ProductCard from "@/components/ProductCard";
 import { getProducts } from "@/lib/actions/actions";
 import React from "react";
+import ProductCard from "./product_card";
 
 type Props = {};
 
@@ -12,7 +13,7 @@ export default async function ProductsList({}: Props) {
   }
 
   return (
-    <div className="fluid-grid">
+    <div className="fluid-product-grid">
       {products.map((product: ProductType) => (
         <ProductCard key={product._id} product={product} />
       ))}

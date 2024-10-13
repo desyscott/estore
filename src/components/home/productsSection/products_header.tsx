@@ -8,7 +8,14 @@ type Props = {};
 export default function ProductsHeader({}: Props) {
   return (
     <div className="flex items-center justify-between mb-4">
-      <h3 className="text-3xl md:text-5xl text-nowrap">Latest Products</h3>
+      <div>
+        <h3 className="text-3xl md:text-5xl text-nowrap">Latest Products</h3>
+        <p className="text-sm text-slate-500 w-2/3">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat
+          blanditiis est iusto recusandae, quia tempore quos delectus quod..
+        </p>
+      </div>
+
       <Button
         variant={"outline"}
         className={cn(

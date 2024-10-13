@@ -7,9 +7,9 @@ type Props = {};
 
 export default function SecTwo({}: Props) {
   const images = [
-    "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/13991170/pexels-photo-13991170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/14642105/pexels-photo-14642105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/8947923/pexels-photo-8947923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/2106216/pexels-photo-2106216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function SecTwo({}: Props) {
       </div>
 
       <div className="bg-indigo-00 mt-16">
-        <div className="flex items-center gap-1 mt-4 mb-2">
+        <div className="flex items-center gap-1 mt-4 mb-4">
           <p className="text-sm text-slate-600 underline underline-offset-4 decoration-slate-400">
             Next-level Adventure
           </p>
@@ -53,7 +53,9 @@ export default function SecTwo({}: Props) {
         </div>
 
         <Image
-          src="https://images.pexels.com/photos/440320/pexels-photo-440320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="https://images.pexels.com/photos/7776093/pexels-photo-7776093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          // src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          // src="https://images.pexels.com/photos/440320/pexels-photo-440320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="banner"
           width={2000}
           height={1000}
