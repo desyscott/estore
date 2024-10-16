@@ -6,18 +6,18 @@ export const connectToDB = async (): Promise<void> => {
   mongoose.set("strictQuery", true);
 
   if (isConnected) {
-    console.log("MongoDB is already connected");
+    // console.log("MongoDB is already connected");
     return;
   }
 
   try {
     await mongoose.connect(process.env.MONGODB_URL || "", {
-      dbName: "Esstore_Store",
+      dbName: "es-store",
     });
 
     isConnected = true;
-    console.log("MongoDB is connected");
+    // console.log("MongoDB is connected");
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };

@@ -20,7 +20,7 @@ const Wishlist = () => {
       setSignedInUser(data);
       setLoading(false);
     } catch (err) {
-      console.log("[users_GET", err);
+      console.error("[users_GET", err);
     }
   };
 

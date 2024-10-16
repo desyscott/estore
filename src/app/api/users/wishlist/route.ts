@@ -1,7 +1,7 @@
 import User from "@/lib/models/User";
 import { connectToDB } from "@/lib/mongoDB";
 
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -41,7 +41,7 @@ export const POST = async (req: NextRequest) => {
 
     return NextResponse.json(user, { status: 200 });
   } catch (err) {
-    console.log("[wishlist_POST]", err);
+    console.error("[wishlist_POST]", err);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 };

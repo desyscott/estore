@@ -1,13 +1,13 @@
 import { getOrders } from "@/lib/actions/actions";
 
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 
 const Orders = async () => {
   const { userId } = auth();
   const orders = await getOrders(userId as string);
 
-  console.log(orders[0].products);
+  // console.log(orders[0].products);
 
   return (
     <div className="px-10 py-5 max-sm:px-3">
