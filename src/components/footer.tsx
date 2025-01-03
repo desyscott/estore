@@ -17,7 +17,7 @@ export default function Footer({}: Props) {
           <p className="text-lg md:text-xl font-semibold w-full md:w-[70%] lg:w-[50%]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
-          <p className="text-sm mt-2">Micheal Essuman</p>
+          <p className="text-sm mt-2">Desmond Essuman</p>
           <p className="text-sm -mt-1">October, 2024</p>
         </div>
         <div className="bg-amber-00 w-[40%] md:w-[15%] ml-0 md:ml-auto ">
@@ -49,23 +49,23 @@ export default function Footer({}: Props) {
 
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0  pt-8 pb-4 text-white/80 p-8">
         <div className="flex items-center gap-2">
-          <Link href="mailto:michealessuman08@gmail.com" target="_blank">
+          <Link href="mailto:desmondessuman054@gmail.com" target="_blank">
             <EnvelopeClosedIcon className="w-5 h-5" />
           </Link>
-          <Link href="https://github.com/k-stiles" target="_blank">
+          <Link href="https://github.com/desyscott" target="_blank">
             <GitHubLogoIcon className="w-5 h-5" />
           </Link>
-          <Link href="https://x.com/KwakuStiles" target="_blank">
+          <Link href="https://x.com/desy_scott" target="_blank">
             <TwitterLogoIcon className="w-5 h-5" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/micheal-essuman-38146a259"
+            href="https://www.linkedin.com/in/desmond-essuman/"
             target="_blank"
           >
             <LinkedInLogoIcon className="w-5 h-5" />
           </Link>
         </div>
-        <p className="">© 2024 Essuman Micheal. All rights reserved.</p>
+        <p className="">© 2024 Essuman Desmond. All rights reserved.</p>
       </div>
     </div>
   );
