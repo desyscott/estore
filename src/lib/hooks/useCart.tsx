@@ -5,7 +5,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 interface CartItem {
   item: ProductType;
   quantity: number;
-  color?: string; // ? means optional
+  color?: string;
   size?: string; // ? means optional
 }
 
@@ -26,7 +26,7 @@ const useCart = create(
         const { item, quantity, color, size } = data;
         const currentItems = get().cartItems; // all the items already in cart
         const isExisting = currentItems.find(
-          (cartItem) => cartItem.item._id === item._id
+          (cartItem) => cartItem.item._id === item._id,
         );
 
         if (isExisting) {
@@ -38,7 +38,7 @@ const useCart = create(
       },
       removeItem: (idToRemove: String) => {
         const newCartItems = get().cartItems.filter(
-          (cartItem) => cartItem.item._id !== idToRemove
+          (cartItem) => cartItem.item._id !== idToRemove,
         );
         set({ cartItems: newCartItems });
         toast.success("Item removed from cart");
@@ -47,16 +47,16 @@ const useCart = create(
         const newCartItems = get().cartItems.map((cartItem) =>
           cartItem.item._id === idToIncrease
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+            : cartItem,
         );
         set({ cartItems: newCartItems });
         toast.success("Item quantity increased");
       },
       decreaseQuantity: (idToDecrease: String) => {
         const newCartItems = get().cartItems.map((cartItem) =>
-          cartItem.item._id === idToDecrease
+          cartItem.item._id === idToDecrease && cartItem.quantity > 1
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
-            : cartItem
+            : cartItem,
         );
         set({ cartItems: newCartItems });
         toast.success("Item quantity decreased");
@@ -66,9 +66,8 @@ const useCart = create(
     {
       name: "cart-storage",
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );
 
 export default useCart;
-
