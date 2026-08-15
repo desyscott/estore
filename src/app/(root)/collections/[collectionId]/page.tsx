@@ -10,6 +10,10 @@ const CollectionDetails = async ({
 }) => {
   const collectionDetails = await getCollectionDetails(params.collectionId);
 
+  if (!collectionDetails) {
+    return <p className="py-10 text-center">Collection not found</p>;
+  }
+
   return (
     <div className="px-10 py-5 flex flex-col items-center gap-8">
       <Image

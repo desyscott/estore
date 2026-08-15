@@ -22,25 +22,18 @@ export const getCollections = async () => {
 }
 
 export const getCollectionDetails = async (collectionId: string) => {
-  // const collection = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/collections/${collectionId}`)
-  // return await collection.json()
-  console.log("Fetching collections from API:", `${process.env.NEXT_PUBLIC_API_URL}/collections`);
-
   try {
-    const collections = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/collections`);
+    const collection = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/collections/${collectionId}`);
 
-    // Check if the request was successful
-    if (!collections.ok) {
-      console.error("Failed to fetch collections, status:", collections.status);
-      return []; // Return an empty array if the request fails
+    if (!collection.ok) {
+      console.error("Failed to fetch collection details, status:", collection.status);
+      return null;
     }
 
-    const data = await collections.json();
-    console.log("Fetched collections data:", data);
-    return data;
+    return await collection.json();
   } catch (error) {
-    console.error("Error fetching collections:", error);
-    return []; // Return an empty array in case of an error
+    console.error("Error fetching collection details:", error);
+    return null;
   }
 }
 
