@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "../../styles/globals.css";
 import Nav_Bar from "@/components/Nav_bar";
 import Footer from "@/components/footer";
-// import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +19,6 @@ export default function AppLayout({
 }>) {
   return (
     <main className={`${inter.className} flex flex-col h-screen`}>
-      {/* <Navbar /> */}
       <Nav_Bar />
       {children}
       <div className="mt-auto">

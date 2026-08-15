@@ -17,7 +17,7 @@ export default function Navlinks({}: Props) {
     <nav className="hidden md:flex w-full gap-6 md:flex-row md:items-center md:justify-center md:gap-5 lg:gap-6">
       {navigationLinks.map((link) => {
         const isActive = pathname === link.href;
-        const href = user || link.href === "/" ? link.href : "sign-in";
+        const href = user || link.href === "/" ? link.href : "/sign-in";
         return (
           <Link
             key={link.href}

@@ -22,7 +22,7 @@ export default function MobileNavlinks({}: Props) {
 
       {navigationLinks.map((link) => {
         const isActive = pathname === link.href;
-        const href = user || link.href === "/" ? link.href : "sign-in";
+        const href = user || link.href === "/" ? link.href : "/sign-in";
         // const href = (link.href ==="/" && !user) ? link.href : "sign-in";
         return (
           <Link

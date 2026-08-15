@@ -40,14 +40,20 @@ export default function UserBtn({}: Props) {
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => openUserProfile()}>
+            <DropdownMenuItem
+              className="cursor-pointer"
+              onClick={() => openUserProfile()}
+            >
               Settings
             </DropdownMenuItem>
-            <DropdownMenuItem asChild>
+            <DropdownMenuItem className="cursor-pointer" asChild>
               <a href="mailto:mrfallback055@gmail.com">Support</a>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => signOut(() => router.push("/sign-in"))}>
+            <DropdownMenuItem
+              className="cursor-pointer"
+              onClick={() => signOut(() => router.push("/sign-in"))}
+            >
               Logout
             </DropdownMenuItem>
           </DropdownMenuContent>
