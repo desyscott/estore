@@ -12,12 +12,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { useUser, useClerk } from "@clerk/nextjs";
 
 type Props = {};
 
 export default function UserBtn({}: Props) {
   const { user } = useUser();
+  const { openUserProfile, signOut } = useClerk();
+  const router = useRouter();
 
   return (
     <>
@@ -37,10 +40,16 @@ export default function UserBtn({}: Props) {
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => openUserProfile()}>
+              Settings
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="mailto:mrfallback055@gmail.com">Support</a>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => signOut(() => router.push("/sign-in"))}>
+              Logout
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )}
