@@ -7,8 +7,7 @@ export default function SecOne({}: Props) {
   return (
     <Image
       priority
-      src="
-      https://images.pexels.com/photos/9069003/pexels-photo-9069003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      src="https://images.pexels.com/photos/9069003/pexels-photo-9069003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       // src="https://images.pexels.com/photos/9069207/pexels-photo-9069207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       // src="https://images.pexels.com/photos/8728382/pexels-photo-8728382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       alt="banner"
