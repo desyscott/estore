@@ -42,7 +42,8 @@ export default function SecTwo({ product }: Props) {
             variant="outline"
             className={cn(
               "rounded-full bg-slate-100 border-none h-8 w-auto px-3 whitespace-nowrap text-slate-700 text-xs",
-              selectedSize === size && "bg-black text-white hover:bg-black"
+              selectedSize === size &&
+                "bg-black text-white hover:bg-black hover:text-white"
             )}
             onClick={() => setSelectedSize(size)}
           >
