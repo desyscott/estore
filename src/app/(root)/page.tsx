@@ -1,22 +1,22 @@
 import CollectionsSection from "@/components/home/collectionSection/collection_section";
 import Landing from "@/components/home/landing";
-import ProductList from "@/components/ProductList";
-import Collections from "@/components/Collections";
-
-import Image from "next/image";
 import ProductsSection from "@/components/home/productsSection/product_section";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
     <section>
-      <Landing />
+      <Reveal>
+        <Landing />
+      </Reveal>
 
-      <CollectionsSection />
+      <Reveal delay={0.1}>
+        <CollectionsSection />
+      </Reveal>
 
-      <ProductsSection />
-
-      {/* <Collections /> */}
-      {/* <ProductList /> */}
+      <Reveal delay={0.1}>
+        <ProductsSection />
+      </Reveal>
     </section>
   );
 }

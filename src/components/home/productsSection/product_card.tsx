@@ -18,15 +18,17 @@ export default function ProductCard({
   return (
     <Link
       href={`/products/${product._id}`}
-      className="w-full flex flex-col gap-2"
+      className="group w-full flex flex-col gap-2"
     >
-      <Image
-        src={product.media[0]}
-        alt="product"
-        width={250}
-        height={300}
-        className="h-[250px] w-full rounded-lg object-cover"
-      />
+      <div className="h-[250px] w-full rounded-lg overflow-hidden shadow-sm transition-shadow duration-300 group-hover:shadow-xl">
+        <Image
+          src={product.media[0]}
+          alt="product"
+          width={250}
+          height={300}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
 
       <div className="p-2">
         <p className="text-base-bold">{product.title}</p>

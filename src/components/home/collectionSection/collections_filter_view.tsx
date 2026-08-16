@@ -61,14 +61,14 @@ export default function CollectionsFilterView({ collections }: Props) {
               <Link
                 href={`/collections/${collection._id}`}
                 key={collection._id}
-                className="relative"
+                className="group relative overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-xl"
               >
                 <Image
                   src={collection.image}
                   alt={collection.title}
                   width={350}
                   height={200}
-                  className="rounded-lg cursor-pointer w-full h-full object-cover"
+                  className="cursor-pointer w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <Pill className="absolute top-2 right-3 " />
                 <Info
