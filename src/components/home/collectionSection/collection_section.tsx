@@ -1,17 +1,15 @@
 import React from "react";
-import Header from "./header";
-import Collections from "./collections";
+import { getCollections } from "@/lib/actions/actions";
+import CollectionsFilterView from "./collections_filter_view";
 
 type Props = {};
 
-export default function CollectionsSection({}: Props) {
+export default async function CollectionsSection({}: Props) {
+  const collections = await getCollections();
+
   return (
     <div className="my-10 w-full max-w-[95%] mx-auto">
-      <Header />
-
-      <div className="my-10">
-        <Collections />
-      </div>
+      <CollectionsFilterView collections={collections ?? []} />
     </div>
   );
 }
