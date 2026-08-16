@@ -6,6 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { MinusCircle, PlusCircle, Trash } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 const Cart = () => {
   const router = useRouter();
@@ -25,6 +26,11 @@ const Cart = () => {
   };
 
   const handleCheckout = async () => {
+    if (cart.cartItems.length === 0) {
+      toast.error("Your cart is empty");
+      return;
+    }
+
     try {
       if (!user) {
         router.push("/sign-in");
@@ -33,13 +39,23 @@ const Cart = () => {
           method: "POST",
           body: JSON.stringify({ cartItems: cart.cartItems, customer }),
         });
+
+        if (!res.ok) {
+          toast.error("Checkout failed. Please try again.");
+          return;
+        }
+
         const data = await res.json();
-        console.log("data:",data)
+        if (!data.url) {
+          toast.error("Checkout failed. Please try again.");
+          return;
+        }
+
         window.location.href = data.url;
-        // console.log(data);
       }
     } catch (err) {
       console.error("[checkout_POST]", err);
+      toast.error("Checkout failed. Please try again.");
     }
   };
 
@@ -109,8 +125,9 @@ const Cart = () => {
           <span>$ {totalRounded}</span>
         </div>
         <button
-          className="border rounded-lg text-body-bold bg-white py-3 w-full hover:bg-black hover:text-white"
+          className="border rounded-lg text-body-bold bg-white py-3 w-full hover:enabled:bg-black hover:enabled:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={handleCheckout}
+          disabled={cart.cartItems.length === 0}
         >
           Proceed to Checkout
         </button>
