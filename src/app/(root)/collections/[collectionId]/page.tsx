@@ -29,11 +29,17 @@ const CollectionDetails = async ({
       <p className="text-body-normal text-grey-2 text-center max-w-[900px]">
         {collectionDetails.description}
       </p>
-      <div className="flex flex-wrap gap-16 justify-center">
-        {collectionDetails.products.map((product: ProductType) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
-      </div>
+      {collectionDetails.products.length === 0 ? (
+        <p className="text-body-bold py-10">
+          No products in this collection yet
+        </p>
+      ) : (
+        <div className="flex flex-wrap gap-16 justify-center">
+          {collectionDetails.products.map((product: ProductType) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
